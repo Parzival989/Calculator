@@ -12,4 +12,16 @@ function Calculator(operator, value1, value2) {
   }
 }
 
-console.log(Calculator("*", 2, 4));
+const buttons = document.querySelectorAll(".column p");
+
+for (let button of buttons) {
+  if (!isNaN(Number(button.innerHTML))) {
+    button.addEventListener("click", () => {
+      console.log("number");
+    });
+  } else {
+    button.addEventListener("click", () => {
+      "symbol";
+    });
+  }
+}
