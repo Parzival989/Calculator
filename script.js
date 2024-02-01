@@ -161,12 +161,12 @@ for (let button of buttons) {
 /* Keyboard */
 
 document.addEventListener("keydown", (event) => {
-  console.log(event.key);
+  //console.log(event.key);
   if (!isNaN(Number(event.key)) || event.key === ".") {
     setValue(event.key, "number");
   } else if (operators.includes(event.key)) {
     setValue(event.key, "operator");
-  } else if (event.key === "=") {
+  } else if (event.key === "=" || event.key == "Enter") {
     calcResult();
   } else if (event.key === "C") {
     clearCalculationScreen();
@@ -174,4 +174,3 @@ document.addEventListener("keydown", (event) => {
     delButton();
   }
 });
-
