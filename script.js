@@ -160,6 +160,21 @@ for (let button of buttons) {
 
 /* Keyboard */
 
+document.addEventListener("keydown", (event) => {
+  console.log(event.key);
+  if (!isNaN(Number(event.key)) || event.key === ".") {
+    setValue(event.key, "number");
+  } else if (operators.includes(event.key)) {
+    setValue(event.key, "operator");
+  } else if (event.key === "=") {
+    calcResult();
+  } else if (event.key === "C") {
+    clearCalculationScreen();
+  } else if (event.key === "Backspace") {
+    delButton();
+  }
+});
+
 /*
 
 function setValue(value, operator) {
